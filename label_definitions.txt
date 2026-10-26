@@ -5,6 +5,6 @@
 #
 # Delete the examples below and put yours in.
 
-analysis: makes an argument backed by a specific, checkable fact
-hot_take: a confident claim with no support offered
-reaction: an immediate response to something that just happened
+Constructive_Criticism: A post that identifies something that could be improved and proposes a specific change or solution.
+Opinion: A post that expresses a personal preference, belief, or judgment without explicitly challenging or rejecting a position or proposing a specific improvement.
+Hot_Take: A post that makes a strong claim challenging or rejecting a position without proposing a specific change or solution.

@@ -41,6 +41,14 @@
 
 <!-- Your community, and what your classifier sorts posts into. Three or four
      sentences. -->
+     This project uses posts from the Wizard101 community on Reddit to explore how
+people express opinions, make strong claims, and suggest improvements to the
+game. The classifier sorts posts into three categories: Constructive_Criticism,
+Opinion, and Hot_Take. Constructive_Criticism covers posts that identify a
+problem and suggest a solution, Opinion covers personal preferences or
+judgments, and Hot_Take covers strong claims that challenge or reject a
+position. The goal is to train a model to recognize these differences in
+community discussions.
 
 
 
@@ -54,33 +62,60 @@
      The decision rule is worth a point on its own and it's the thing most
      people leave out. Every taxonomy has a hardest boundary. Name yours. -->
 
-### `label_one`
+### `Constructive_Criticism`
 
-**Definition:**
-
-**Example 1:**
->
-
-**Example 2:**
->
-
-### `label_two`
-
-**Definition:**
+**Definition:** A post that identifies something that could be improved and proposes a specific change or solution.
 
 **Example 1:**
->
+
+> TAKE: when using AOE, damage should be even to all enemies
+
+Source: https://www.reddit.com/r/Wizard101/comments/1dg7s2k/
 
 **Example 2:**
+
+> KI really should actually keep restarting the servers at least every week with maintenance like they say they will on Twitter to help with server performance.
+
+Source: https://www.reddit.com/r/Wizard101/comments/1dg7s2k/
 >
+
+### `Opinion`
+
+**Definition:** A post that expresses a personal preference, belief, or judgment without explicitly challenging or rejecting a position or proposing a specific improvement.
+
+**Example 1:**
+
+> personally, i like that the game is still childlike or centric towards kids. if i wanted to play a more serious or mature themed mmorpg, i could play something else.
+
+Source: https://www.reddit.com/r/Wizard101/comments/zycz9w/
+
+**Example 2:**
+
+> For that reason, I’m sort of inclined not to choose Death.
+
+Source: https://www.reddit.com/r/Wizard101/comments/1tnu97b/
+
+### `Hot_Take`
+
+**Definition:** A post that makes a strong claim challenging or rejecting a position without proposing a specific change or solution.
+
+**Example 1:**
+
+> BASIC HOT TAKE: there are so many clueless high leveled wizards, when pve is a pretty basic structure.
+
+Source: https://www.reddit.com/r/Wizard101/comments/1dg7s2k/
+
+**Example 2:**
+
+> Unpopular opinion: Wizard 101 is a better game than wow
+
+Source: https://www.reddit.com/r/Wizard101/comments/1w2xaxo/unpopular_opinion_wizard_101_is_a_better_game/
 
 ### The hardest boundary
 
-**Which two labels:**
+**Which two labels:** `Opinion` vs. `Hot_Take`
 
-**The decision rule I used every time:**
-<!-- e.g. "If the post names a specific checkable fact, it's `analysis`, even
-     if the tone is heated." -->
+**The decision rule I used every time:** When a personal judgment explicitly challenges or rejects a position, I classify it as `Hot_Take` rather than `Opinion`.
 
 
 

@@ -51,65 +51,32 @@ whether you hit them:
 
 ---
 
-## 1.
+# Acceptance Criteria
 
-<!-- Your criterion. It must name a number. -->
+## 1. Overall Accuracy
+**Target:** The model must achieve at least 0.65 (65%) overall accuracy on the held-out test set.
 
+**Reason:** There are three labels, so random guessing would achieve roughly 33% accuracy if guesses were equally likely. I chose 65% as a target that would indicate the model is learning meaningful distinctions between the labels without assuming perfect classification.
 
+## 2. Per-Label Performance
+**Target:** Each of the three labels must achieve an F1 score of at least 0.50 on the held-out test set.
 
-**Why this target:**
+**Reason:** I want the model to recognize all three categories reasonably well rather than performing well overall while consistently misclassifying one label. I chose 0.50 as a challenging but attainable initial target because the labels have overlapping boundaries.
 
+## 3. Label Balance
+**Target:** No individual label may account for more than 50% of the labeled dataset.
 
+**Reason:** If one label dominates the dataset, a model could achieve deceptively good accuracy by predicting that label too often. Keeping every label below 50% should encourage the model to learn distinctions across all three categories.
 
----
+## 4. Labeling Consistency
+**Target:** I must agree with an independent labeling of at least 70% of a sample of 20 posts.
 
-## 2.
+**Reason:** The categories can overlap, particularly when distinguishing an Opinion from a Hot_Take. I chose 70% because I want my definitions and decision rules to produce reasonably consistent labels, while allowing for genuinely ambiguous posts.
 
-<!-- Your criterion. -->
+## 5. Confidence
+**Target:** Predictions with confidence scores of at least 0.80 must be correct at least 80% of the time on the held-out test set.
 
-
-
-**Why this target:**
-
-
-
----
-
-## 3.
-
-<!-- Your criterion. -->
-
-
-
-**Why this target:**
-
-
-
----
-
-## 4.
-
-<!-- Your criterion. -->
-
-
-
-**Why this target:**
-
-
-
----
-
-## 5.
-
-<!-- Your criterion. -->
-
-
-
-**Why this target:**
-
-
-
----
+**Reason:** A high-confidence prediction should generally be more trustworthy than an uncertain one. I chose 80% as a useful threshold, although I recognize that the model's confidence scores may not accurately reflect its actual probability of being correct.
 
 <!-- ─────────────────────────────────────────────────────────────────────────
      UNIT 6 — read this before you change anything above.
