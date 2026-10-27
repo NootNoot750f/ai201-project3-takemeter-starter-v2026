@@ -126,19 +126,18 @@ Source: https://www.reddit.com/r/Wizard101/comments/1w2xaxo/unpopular_opinion_wi
 <!-- Where you collected from, how you labelled, your counts, and three hard
      cases. -->
 
-**Where the posts came from:**
+**Where the posts came from:** The r/Wizard101 subreddit. I searched it by keyword, using terms like "trash," "overrated," and "they need to fix this." AI helped me come up with the keywords and find posts faster (see How I Used AI).
 
-**How I labelled them:** <!-- Cold first? Pre-labelled with AI and corrected?
-Say so plainly — the disclosure is required, not penalised. -->
+**How I labelled them:** AI pre-labelled the posts, and then I checked every one and corrected the labels I disagreed with. Of the 154 rows, 134 are AI-assisted and 20 are cold (labelled by me without AI, marked `cold` in `labels.csv`).
 
 **Counts per label:**
 
 | Label | Count | Share |
 |---|---|---|
-|  |  |  |
-|  |  |  |
-|  |  |  |
-| **Total** |  | 100% |
+| `Opinion` | 95 | 61.7% |
+| `Constructive_Criticism` | 40 | 26.0% |
+| `Hot_Take` | 19 | 12.3% |
+| **Total** | 154 | 100% |
 
 **Three hard cases**
 
@@ -146,25 +145,25 @@ Say so plainly — the disclosure is required, not penalised. -->
      been, and what you chose. These are worth more than the easy 190. -->
 
 **1.**
-> *The post:*
+> *The post:* "If Wizard101 went fully free to play with optional purchases, would it be more successful?"
 >
-> *Could have been:*
+> *Could have been:* `Constructive_Criticism` or `Hot_Take`
 >
-> *I chose, because:*
+> *I chose, because:* `Constructive_Criticism`. The post discusses changing the game's payment model to attract more players and possibly increase revenue. The idea is debatable, but the main purpose is to suggest a change that could improve the game.
 
 **2.**
-> *The post:*
+> *The post:* "Unpopular opinion: Wizard 101 is a better game than WoW."
 >
-> *Could have been:*
+> *Could have been:* `Opinion` or `Hot_Take`
 >
-> *I chose, because:*
+> *I chose, because:* `Hot_Take`. The post makes a provocative comparison between two games that players are likely to disagree about. I chose `Hot_Take` because the claim is deliberately controversial rather than an ordinary personal preference.
 
 **3.**
-> *The post:*
+> *The post:* "First arc should be free." The author argues that making the early game free would help new players get invested before reaching the membership paywall.
 >
-> *Could have been:*
+> *Could have been:* `Constructive_Criticism` or `Hot_Take`
 >
-> *I chose, because:*
+> *I chose, because:* `Constructive_Criticism`. The author identifies a specific problem (the early paywall) and explains how changing it could improve player retention. The post offers a concrete solution rather than only making a controversial statement.
 
 ---
 
@@ -172,15 +171,13 @@ Say so plainly — the disclosure is required, not penalised. -->
 
 <!-- Your starting model, your settings, and anything you changed and why. -->
 
-**Base model:**
+**Base model:** distilbert-base-uncased
 
-**Settings:** <!-- epochs, learning rate, batch size, seed -->
+**Settings:** 3 epochs, learning rate 2e-5, batch size 16, max length 128, seed 42, trained on CPU (no GPU detected)
 
-**Anything I changed from the defaults, and why:**
+**Anything I changed from the defaults, and why:** None of the training settings. I changed `LABELS` in the notebook so it matches my three labels.
 
-**Split sizes:** <!-- train / val / test, and per-label counts in the test
-split. If a label had fewer than about 8 in test, say so — it explains a lot
-of next unit's variance. -->
+**Split sizes:** train 107 / val 23 / test 24 (stratified, seed 42). Test counts per label: `Opinion` 15, `Constructive_Criticism` 6, `Hot_Take` 3. `Constructive_Criticism` and `Hot_Take` are both under 8 in the test split, so their F1 scores will be unstable across seeds.
 
 
 
@@ -197,17 +194,17 @@ of next unit's variance. -->
 
 **Moment 1**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* Keyword ideas for searching r/Wizard101 for posts that fit my criteria.
+- *What came back:* A set of search keywords to try.
+- *What I changed:* I used the keywords myself in the subreddit search. The subreddit has a lot of media and off-topic posts, so the keywords were how I narrowed it down.
 
 **Moment 2**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* Posts from the subreddit that fit my criteria, found faster than I could browse.
+- *What came back:* A list of posts. The first list included posts that went outside my criteria.
+- *What I changed:* I asked for a different mix of post types so the dataset would have more variety, and I kept only posts that fit my criteria.
 
-**Pre-labelling disclosure:**
+**Pre-labelling disclosure:** 134 of the 154 labels were AI pre-labels that I checked, and I corrected the ones I disagreed with. For example, some posts the AI called `Hot_Take` were really `Opinion` under my reading of the definitions. The other 20 I labelled myself, marked `cold` in `labels.csv`.
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 
