@@ -139,6 +139,8 @@ Source: https://www.reddit.com/r/Wizard101/comments/1w2xaxo/unpopular_opinion_wi
 | `Hot_Take` | 19 | 12.3% |
 | **Total** | 154 | 100% |
 
+The dataset has 154 rows, under the 200 the brief asks for.
+
 **Three hard cases**
 
 <!-- Any post that made you pause: what it was, which two labels it could have
