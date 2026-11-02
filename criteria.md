@@ -73,6 +73,10 @@ whether you hit them:
 
 **Reason:** The categories can overlap, particularly when distinguishing an Opinion from a Hot_Take. I chose 70% because I want my definitions and decision rules to produce reasonably consistent labels, while allowing for genuinely ambiguous posts.
 
+> **Revised in unit 6:** I must agree with an independent labeling of at least 70% of the 30-post staff set.
+>
+> **Why revised:** The criterion said "a sample of 20 posts," but the staff set I was measured against has 30. The check I ran covered all 30, so the sample size in the original line doesn't match what was measured. The target itself (70%) is unchanged.
+
 ## 5. Confidence
 **Target:** Predictions with confidence scores of at least 0.80 must be correct at least 80% of the time on the held-out test set.
 

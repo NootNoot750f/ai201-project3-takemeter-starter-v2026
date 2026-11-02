@@ -289,11 +289,11 @@ The biggest off-diagonal number is 6 Constructive_Criticism posts that the model
 
 | # | Criterion | Target | Verdict | How I decided |
 |---|---|---|---|---|
-| 1 |  |  |  |  |
-| 2 |  |  |  |  |
-| 3 |  |  |  |  |
-| 4 |  |  |  |  |
-| 5 |  |  |  |  |
+| 1 | Overall accuracy | ≥ 0.65 | MISSED | 0.625, 0.667, 0.625 across seeds 42, 7, 2024. Two of three seeds are below 0.65. |
+| 2 | Every label F1 | ≥ 0.50 | MISSED | Lowest label F1 is 0.000 on all three seeds (Hot_Take). |
+| 3 | No label above 50% | ≤ 50% | MISSED | Opinion is 61.7% of the 154 labels. This is a dataset measure, so it's the same for all seeds. |
+| 4 | Agreement with staff | ≥ 70% | MET | 29 of 30 posts agree (96.7%). The criterion's sample size was revised from 20 to 30 to match the staff set (see criteria.md). |
+| 5 | Confident predictions correct | ≥ 80% | NOT MEASURED | The notebook doesn't check the 0.80 threshold as written. See the note under the Run Log. |
 
 **Diagnoses**
 
@@ -306,7 +306,20 @@ The biggest off-diagonal number is 6 Constructive_Criticism posts that the model
      have that can tell a LABELLING problem from a MODEL problem, and this
      section is graded on whether you used it that way. -->
 
+**Criterion 1: Overall Accuracy**
+- **Cause:** Too few examples for a label.
+- **Evidence:** Overall accuracy ranged from 0.625 to 0.667 across the three seeds. On seed 42, the model predicted Opinion for all 24 test posts, suggesting it learned to favor the majority label rather than distinguish between the three categories. The training set contained only 107 posts, including just 13 Hot_Take and approximately 28 Constructive_Criticism examples. The 96.7% staff agreement check suggests that inconsistent labeling is less likely to be the primary cause, although it is indirect evidence because it measured agreement with staff labels rather than my own.
+- **Why this cause over the others:** The model's tendency to predict Opinion across the entire test set, combined with the limited examples for the other categories, suggests that there were insufficient examples for the model to learn meaningful distinctions between labels.
 
+**Criterion 2: Every Label F1 ≥ 0.50**
+- **Cause:** Too few examples for a label.
+- **Evidence:** Hot_Take had an F1 score of 0.000 across all three seeds, despite having only 13 training examples and 3 test examples. Constructive_Criticism also performed poorly, with F1 scores of 0.000, 0.286, and 0.000. Six Constructive_Criticism test posts were classified as Opinion, suggesting possible confusion between these two categories. The 96.7% agreement check cannot establish whether the Constructive_Criticism vs. Opinion boundary is problematic because the staff taxonomy does not include those labels.
+- **Why this cause over the others:** The consistently zero Hot_Take F1 score and very limited number of training examples provide strong evidence of insufficient data. Although the Constructive_Criticism and Opinion boundary may also be difficult to distinguish, there is not enough evidence to conclude that inconsistent labeling is responsible.
+
+**Criterion 3: No Label Above 50%**
+- **Cause:** Too few examples for a label (closest of the four available causes).
+- **Evidence:** Opinion accounts for 61.7% of the 154 total labels, exceeding the 50% threshold. Although my keyword searches used terms such as "trash," "overrated," and "they need to fix this," which were intended to find Hot_Take and Constructive_Criticism posts, the resulting dataset still contained a disproportionate number of Opinion labels. One possible contributing factor is that AI-generated pre-labels leaned toward Opinion, and I only corrected labels when I disagreed with them. This may have allowed an initial Opinion bias to carry through the collection and labeling process.
+- **Why this cause over the others:** The primary issue is collection skew rather than model performance or a demonstrated labeling-boundary problem. Of the four available causes, insufficient examples for the underrepresented labels is the closest fit, but the underlying problem is how the dataset was collected and labeled.
 
 ---
 
@@ -359,9 +372,9 @@ Across 30 posts, my labels matched staff on 29 (96.7%). The one disagreement was
 
 ## The Improvement
 
-**What I changed:**
+**What I changed:** I did not make any significant changes to the dataset, labeling process, or model during this unit. I kept the existing dataset and training approach to evaluate the model's baseline performance.
 
-**Which diagnosis pointed at it:**
+**Which diagnosis pointed at it:** The Criterion 1 and Criterion 2 diagnoses both pointed to insufficient examples for Hot_Take and Constructive_Criticism. The most useful improvement would be expanding the training dataset with more examples of these underrepresented labels so the model can better recognize their distinguishing characteristics.
 
 ### Run Log — After
 
@@ -373,7 +386,7 @@ Across 30 posts, my labels matched staff on 29 (96.7%). The one disagreement was
 | 4.  |  |  |  |  |  |
 | 5.  |  |  |  |  |  |
 
-**Did it help, and how do I know:**
+**Did it help, and how do I know:** No improvement was tested during this unit because no significant changes were made. Therefore, I cannot determine whether adding more examples would improve the model's performance.
 
 <!-- If it didn't, say so. Relabelling that didn't help is a genuinely
      interesting result and earns full credit. -->
@@ -386,10 +399,24 @@ Across 30 posts, my labels matched staff on 29 (96.7%). The one disagreement was
 
 <!-- For each criterion still missed: what you'd do, and why you stopped. -->
 
+**Criterion 1: Overall Accuracy**
+- **What I'd do:** Collect and label more Hot_Take and Constructive_Criticism posts to balance the training data and give the model more examples to learn from. This should help reduce its tendency to classify everything as Opinion.
+- **Why I stopped:** Collecting and manually labeling additional posts would have required more time than was available during this unit. I prioritized completing the existing dataset and evaluating the model.
+
+**Criterion 2: Every Label F1 ≥ 0.50**
+- **What I'd do:** Increase the number of Hot_Take and Constructive_Criticism examples, particularly Hot_Take, which only had 13 training examples. I would also review the distinction between Constructive_Criticism and Opinion to make sure the labels are consistently applied.
+- **Why I stopped:** Adding examples and reviewing the labeling boundaries would require additional manual labeling and evaluation. I did not have sufficient time to expand and validate the dataset before the deadline.
+
+**Criterion 3: No Label Above 50%**
+- **What I'd do:** Collect additional Hot_Take and Constructive_Criticism posts while being more intentional about maintaining a balanced distribution across all three labels. I would also review the existing labels to identify whether AI-generated pre-labels contributed to the high Opinion share.
+- **Why I stopped:** The existing dataset had already been collected and labeled, and correcting the imbalance would have required revisiting a significant portion of the collection and labeling process. I prioritized finishing the initial experiment rather than making substantial changes close to the deadline.
+
 
 
 **The gap between what I meant my labels to capture and what the model
 learned:**
+I intended Opinion to capture general personal views or reactions, Constructive_Criticism to capture posts that identify problems while offering suggestions or improvements, and Hot_Take to capture strong, provocative, or controversial opinions. The model primarily learned to default to Opinion rather than distinguish between the three categories, predicting Opinion for every test post in one seed and misclassifying six Constructive_Criticism posts as Opinion.
+
 <!-- Two sentences. Your confusion matrix is the evidence. -->
 
 
