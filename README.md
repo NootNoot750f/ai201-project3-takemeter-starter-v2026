@@ -318,7 +318,7 @@ The biggest off-diagonal number is 6 Constructive_Criticism posts that the model
      data/staff_taxonomy.md, not your own — so every argument below is made
      from those definitions and those decision rules. -->
 
-**Agreement rate:** ___ / 30 = ___%
+**Agreement rate:** 29 / 30 = 96.7%
 
 <!-- Nobody grades this number. A 60% who argues every disagreement from the
      stated rules beats a 95% who wrote "staff was right" nine times. Several
@@ -340,15 +340,16 @@ The biggest off-diagonal number is 6 Constructive_Criticism posts that the model
      written rule two different ways on 30 posts, that is direct evidence about
      what you did across your own 200. -->
 
+
 **1.**
 > *The post:*
->
+sp_010,"Three of us ran the same session on the same day, different shoes, within 10 seconds of each other over 5 miles. I'm not saying shoes do nothing, but whatever they do was smaller than the noise between three people."
 > *Staff said / I said:*
->
+>the staff said analysis I said hot take.
 > *My call, and why:*
->
+>I think its a hot take because when it said "I'm not saying shoes do nothing, but whatever they do was smaller than the noise between three people." it sounded more like a random hot take, rather than like a factual analysis of what was going on. The data is also not fact checkable, it is just some information to support the statement the person made. 
 > *Which pile:*
-
+     c
 **2.**
 > *The post:*
 >
