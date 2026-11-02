@@ -1,0 +1,154 @@
+{
+  "model": "facebook/bart-large-mnli",
+  "n": 24,
+  "seed": 42,
+  "held_out": true,
+  "used_definitions": true,
+  "scores": {
+    "n": 24,
+    "accuracy": 0.75,
+    "f1_macro": 0.6313131313131314,
+    "per_label": {
+      "Constructive_Criticism": {
+        "precision": 0.6,
+        "recall": 0.5,
+        "f1": 0.5454545454545454,
+        "support": 6
+      },
+      "Hot_Take": {
+        "precision": 1.0,
+        "recall": 0.3333333333333333,
+        "f1": 0.5,
+        "support": 3
+      },
+      "Opinion": {
+        "precision": 0.7777777777777778,
+        "recall": 0.9333333333333333,
+        "f1": 0.8484848484848485,
+        "support": 15
+      }
+    }
+  },
+  "predictions": [
+    {
+      "text": "You can only keep 3 spells pictured here. The rest are erased forever \ud83d\ude14 which 3 are you keeping?! I\u2019m keeping GNOM, BASILISK, and RAIN OF FIRE submitted by /u/Parking_Property5757 [link] [comments]",
+      "gold": "Opinion",
+      "predicted": "Opinion"
+    },
+    {
+      "text": "galleries farming and glitch submitted by /u/zZeusZys [link] [comments]",
+      "gold": "Opinion",
+      "predicted": "Constructive_Criticism"
+    },
+    {
+      "text": "Wizard404 has a 3D Model Viewer that lets you view any zone in your browser! submitted by /u/Benjamin8693 [link] [comments]",
+      "gold": "Opinion",
+      "predicted": "Opinion"
+    },
+    {
+      "text": "DROWN IN IT\u2026 DROWN IN IT!! submitted by /u/ShatterStory [link] [comments]",
+      "gold": "Hot_Take",
+      "predicted": "Hot_Take"
+    },
+    {
+      "text": "Pet training How many couch potato\u2019s would you recommend having to get snacks for pet training? I currently have 3 so I haven\u2019t had to learn to stack yet, but I know I need more. I just got the life pot belly and the fire pup and am trying to get them both life damage increase to then get a life damage increasing auto belly pup. I would like to have a good income of megasnacks, just unsure how many to plant (and buy/farm) submitted by /u/RegisterMoney1612 [link] [comments]",
+      "gold": "Opinion",
+      "predicted": "Opinion"
+    },
+    {
+      "text": "If I became CEO of Kingsisle... This is purely a hypothetical for fun post. Here are some of the things I would do with Wizard101 if I became in charge of the game. Arc 1 would become entirely free. Arc 1 has been out for 17 years. This content should all be free in Wizard101 in 2026. The current paywall does not offer enough room for new players to get hooked on the game before committing to a membership. Making Dragonspyre and below free would allow players to experience more of the game before deciding whether to pay. Mount stitching would also be available like other forms of stitching, letting players keep a mount's appearance while retaining another mount's stats, speed, and set bonus.",
+      "gold": "Constructive_Criticism",
+      "predicted": "Opinion"
+    },
+    {
+      "text": "Random Question about House Dungeons I haven't done a housing dungeon since 2016 and I have a question, do the dungeon disappear if you do them? I feel like they do, or im mixing them up with the old rattlebones and meowarty style duels. I ask cuz id like to do Winterbane but i dont want to lose the dungeon in my house. submitted by /u/IGotMemeCells [link] [comments]",
+      "gold": "Opinion",
+      "predicted": "Opinion"
+    },
+    {
+      "text": "Two-Handed Sword Idle Animation??? Hello everyone! I can't find anything online actually discussing this, so i'd love some help! Why do some people have the cool great-sword standing idle animation (where ur like kinda stanced up), and some don't? I originally thought that it must be a level related thing, but I saw a level 35 guy with it today. I'm level 78, and I don't have it, but i'd like to. Does anybody know if this is like a bug? or a feature? or a setting? Thank you! Edit: I have the sword of kings and other two handed weapon wands, but the idle still doesn't display for me </3 submitted by /u/Worried_Honey9276 [link] [comments]",
+      "gold": "Opinion",
+      "predicted": "Opinion"
+    },
+    {
+      "text": "How are my stats for Azteca? I just got to Azteca for the first time. I haven\u2019t played since I was a kid so I\u2019m kind of only now learning the whole pet breeding and im behind on crafting\u2026 other than that I\u2019m trying really hard to get my stats up but is this suitable for entering Azteca?? edit: I have all the ww gear except the boots and the sky iron hasta edit pt 2: after taking in all your advice, I now have a full ww set, the atavistic storm trident, bygone storm dirk, bygone storm band, and the berserkers rage pendant (I also have the bygone storm ampul- not sure which is best). I still have pretty low stats compared to what people have been sharing so I\u2019m going to keep farming before I continue leveling up. submitted by /u/SpiritualVache [link] [comments]",
+      "gold": "Opinion",
+      "predicted": "Opinion"
+    },
+    {
+      "text": "Why haven't they reworked minions yet? Just curious to know your guys' thoughts on this. This is something that has been talked about amongst the fan base for a long time and has never been addressed by KingsIsle. It's slightly infuriating.",
+      "gold": "Constructive_Criticism",
+      "predicted": "Opinion"
+    },
+    {
+      "text": "Anyone have a Carnivore Flytrap? Begging on my hands and knees for the stupid death school fly trap. I have literally the ravenous, hungry, peckish and famished flytraps if anyone wants to trade or breed. Please lemme know! submitted by /u/PinkWinnie1219 [link] [comments]",
+      "gold": "Opinion",
+      "predicted": "Opinion"
+    },
+    {
+      "text": "What are your hottest Wizard101 takes? Figure I can start with one of my own: Every AOE in Wizard101 should either work like select target spells, or be nerfed to have 20-40% less damage than they currently do.",
+      "gold": "Hot_Take",
+      "predicted": "Constructive_Criticism"
+    },
+    {
+      "text": "Selenopolis Mini Crashout Just the ramblings of a wizard who utilized the weekend to get his second wiz through Wallaru, ready to get into Darkmoor so both wizards can be caught up for Ahmarra \u2026only to forget that they put this vibe killer of a world in between Happy weekend, all submitted by /u/StatusCookie761 [link] [comments]",
+      "gold": "Opinion",
+      "predicted": "Opinion"
+    },
+    {
+      "text": "Is this a good pet I don\u2019t really understand pets all that well but I think this is a good one for my death wizard right??? submitted by /u/Kev2rare337 [link] [comments]",
+      "gold": "Opinion",
+      "predicted": "Opinion"
+    },
+    {
+      "text": "First try lol I\u2019m lying, This took around 23 hatches and I\u2019m finally happy with 27 attack. I don\u2019t know what jewel to add or if I have anything worth adding but lmk submitted by /u/Smart_Economy_1094 [link] [comments]",
+      "gold": "Opinion",
+      "predicted": "Opinion"
+    },
+    {
+      "text": "Hot Take on Stitching in game! For a free-to-play game that is no different than a World of Warcraft level 20 free trial, this could help gold inflation and let you drip when leveling. I know I will get flak about this on Discord, but I want to vent a little.",
+      "gold": "Constructive_Criticism",
+      "predicted": "Constructive_Criticism"
+    },
+    {
+      "text": "i liked wizard 101 more before the updates. maybe it's the nostalgia. i can admit that. but i came back to wizard 101 extremely confused, and i feel like everyone i play with \"try hards\" with the same boring combos every time and just grinds to rush maxxing. i really miss when wizards 101 felt simpler and more lax, fun for me. every time i play with others they use the same broken combos with 6 cards in a deck and it's so boring to play with. i definitely have the unpopular opinion here but i prefer old wizards101. everything got too complicated and too grindy at the same time. edit: i'd like to say that 2010 was the last time i played wizards 101 before coming back this year. there's about \u224816 years of a difference so i understand that it would be drastic for me in terms of updates and changes",
+      "gold": "Opinion",
+      "predicted": "Opinion"
+    },
+    {
+      "text": "lvl 40 go brr that\u2019s it, that is all the post is submitted by /u/Adventurous_Foot4677 [link] [comments]",
+      "gold": "Opinion",
+      "predicted": "Opinion"
+    },
+    {
+      "text": "Looking good fellow wizards! Haven\u2019t seen the game this packed in a minute! submitted by /u/RedReaperThe1st [link] [comments]",
+      "gold": "Opinion",
+      "predicted": "Opinion"
+    },
+    {
+      "text": "KINGSISLE/WIZ101 need to create a trade system between players and make us pay crown if they worry about financial stability. Discussion emoji:will: Getting tired of farming man",
+      "gold": "Constructive_Criticism",
+      "predicted": "Constructive_Criticism"
+    },
+    {
+      "text": "Never left so fast in my life \ud83d\ude2d\u270c\ud83c\udffd Just not today I just finished wallaru today and I did not want to deal with them tonight \ud83d\ude2d submitted by /u/WebbUglyAF [link] [comments]",
+      "gold": "Opinion",
+      "predicted": "Opinion"
+    },
+    {
+      "text": "Why do they keep making trash animations Other emoji:Universal: seriously the only reason I used to come back every year and play this game is a cool new spell. Ever since candy land, the spells have been downright horrendous aside from a few. Are they not aware how bad it is??",
+      "gold": "Hot_Take",
+      "predicted": "Opinion"
+    },
+    {
+      "text": "Wizard101 membership model. I made my first account in 2009 and the second in 2011, which I still use today. Over a decade later, I'm still playing and can't help wondering why the membership model remains so outdated. Wizard101's membership model is something you'd expect from an MMO in the 2000s. Some of the most successful games are free to play. The current model deters new players from giving the game a chance. Most players seem older and have been playing for years. A friend who recently returned to Wizard101 told me she didn't like feeling obligated to pay to experience new content. I share that sentiment and started thinking about how the membership model could be changed.",
+      "gold": "Constructive_Criticism",
+      "predicted": "Opinion"
+    },
+    {
+      "text": "How to Fix Minions in Wizard101 (PVE) Minions are one of the coolest systems in the game and probably the only reason I still play but right now minions are not very useful or not worth using in serious advanced content. Minions from learned spells become useless fast. They just don't have the health or damage to keep up in advanced content. They should scale with your level so you can bring them along all the time: HP, Damage (universal or flat), Accuracy, Some form of resist (universal or flat). This applies to all learned minions (Living Puppet, Troll, Cyclops, etc.). As you level, their rank also increases, and so their spell cards improve or they gain new ones. For example, Living Puppet gains elemental blades spell and his 1 pip spells are now all 2 pips. Let Us CONTROL Minions. Give us a simple control system.",
+      "gold": "Constructive_Criticism",
+      "predicted": "Constructive_Criticism"
+    }
+  ]
+}

@@ -222,18 +222,22 @@ The dataset has 154 rows, under the 200 the brief asks for.
 
 | Measure | Baseline | Trained | Difference |
 |---|---|---|---|
-| Overall accuracy |  |  |  |
-| Macro F1 |  |  |  |
-| F1 — `label_one` |  |  |  |
-| F1 — `label_two` |  |  |  |
+| Overall accuracy | 0.750 | 0.625 | -0.125 |
+| Macro F1 | 0.631 | 0.256 | -0.375 |
+| F1 — `Constructive_Criticism` | 0.545 | 0.000 | -0.545 |
+| F1 — `Hot_Take` | 0.500 | 0.000 | -0.500 |
+| F1 — `Opinion` | 0.848 | 0.769 | -0.079 |
 
-**What I predicted before I looked:**
+Both models scored on the same 24 held-out posts (`test_split.csv`). The baseline used my label definitions. The trained column is from the single seed-42 run in `results.json`.
+
+**What I predicted before I looked:** I predict that the trained model will perform better than the baseline model. Even though the training set is small and imbalanced, the baseline model was never trained on my posts, and the trained model only needs to beat 0.848 (the baseline's F1 for Opinion).
 <!-- Milestone 1 asks you to write this BEFORE seeing the trained numbers. A
      prediction made afterwards isn't one. -->
 
-**What the gap actually means:**
+**What the gap actually means:** The baseline beat my trained model on accuracy (0.750 vs 0.625) and macro F1 (0.631 vs 0.256). I think this is because the trained model predicted Opinion for almost every post, and it had only 13 Hot_Take training examples. To test this, I would add Constructive_Criticism and Hot_Take posts to see whether the trained model improves.
 <!-- If the baseline matched your trained model, your fine-tuning added
      nothing — and that is a real finding, not a failure. Say it plainly. -->
+     
 
 
 
@@ -246,27 +250,33 @@ The dataset has 154 rows, under the 200 the brief asks for.
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1.  | 0.65 | 0.625 |  0.667| 0.625 |  |
+| 2.  | 0.50 |0  | 0 | 0 |  |
+| 3.  | <50% | 61.7% | same |  same|  |
+| 4.  | ≥ 70% | pending | pending | pending |  |
+| 5.  | ≥ 80% | not measured (see note) | not measured (see note) | not measured (see note) |  |
+
+**Note on criterion 5:** The notebook doesn't measure this criterion as written. It splits predictions into confidence thirds and reports accuracy for the most-confident third (0.875 on seed 42, 0.875 on seed 7, 1.000 on seed 2024). It doesn't save each post's confidence, so I can't tell whether any prediction reached 0.80. Measuring it properly needs the per-post confidences saved.
 
 ### Confusion matrix
 
 <!-- ⚠️ TYPED AS A MARKDOWN TABLE. The notebook prints one ready to paste.
      An image of a matrix earns nothing. -->
 
-| true \ predicted |  |  |  |
+| true \ predicted | Constructive_Criticism | Opinion | Hot_Take |
 |---|---|---|---|
-| **** |  |  |  |
-| **** |  |  |  |
-| **** |  |  |  |
+| **Constructive_Criticism** | 0 | 6 | 0 |
+| **Opinion** | 0 | 15 | 0 |
+| **Hot_Take** | 0 | 3 | 0 |
+
+The matrix is from seed 42. The notebook prints the matrix for the first seed only.
 
 **My biggest off-diagonal number, and what it means:**
+The biggest off-diagonal number is 6 Constructive_Criticism posts that the model marked as Opinion, and none of the reverse errors happened, so the model learned to treat that boundary as Opinion.
 <!-- Not "the model made mistakes" — WHICH boundary it didn't learn, and which
      direction. "7 real analysis posts were called hot_take and only 3 went the
      other way" is a direction, not just an error rate. -->
+
 
 
 
